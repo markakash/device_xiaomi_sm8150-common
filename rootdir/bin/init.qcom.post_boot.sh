@@ -142,6 +142,13 @@ case "$target" in
     echo 0-2 > /dev/cpuset/system-background/cpus
     echo 0-3 > /dev/cpuset/restricted/cpus
 
+    # Setup final blkio
+    # value for group_idle is us
+    echo 1000 > /dev/blkio/blkio.weight
+    echo 100 > /dev/blkio/background/blkio.weight
+    echo 2000 > /dev/blkio/blkio.group_idle
+    echo 0 > /dev/blkio/background/blkio.group_idle
+
     # Configure governor settings for silver cluster
     echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
