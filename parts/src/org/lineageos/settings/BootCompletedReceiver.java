@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package com.potato.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.lineageos.settings.dirac.DiracUtils;
-import org.lineageos.settings.doze.DozeUtils;
+import com.potato.settings.dirac.DiracUtils;
+import com.potato.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
